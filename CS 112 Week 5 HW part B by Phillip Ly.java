@@ -84,3 +84,5 @@ public class rock_paper_scissor_game {
 		}
 		kb.close();
 	}
+	
+	// Good...especially the comments
