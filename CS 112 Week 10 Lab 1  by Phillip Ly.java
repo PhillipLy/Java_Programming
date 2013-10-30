@@ -21,3 +21,22 @@ public class Dice {
 	}
 
 } // end class Dice
+
+public class wk10_lab1_Dice {
+	
+	 int diceNumber;
+	
+	public int Throw()
+	{
+			
+		int num =  (int)( 1 + (int) (Math.random() * 6);
+		return num;
+	}
+
+	public int Value()
+	{
+		 diceNumber = Throw();
+		return diceNumber;
+		
+	}
+}

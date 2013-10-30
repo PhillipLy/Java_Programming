@@ -34,5 +34,35 @@ public class Dice {
 	 
 	 return number;
 	}
+	
+	public int Value()
+	{
+		diceNumber = number;
+		return diceNumber;
+	}
 
 } // end class Dice
+
+// starts of main program for testing
+import javax.swing.JOptionPane;
+
+
+public class test {
+	public static void main(String[] args) {
+		
+		Dice test = new dice();
+		int bounces;
+		
+		
+		bounces = (int)( Math.random()*(2)) + 1;
+		
+		 
+		test.Throw(bounces);
+		
+		JOptionPane.showMessageDialog(null,"The test number is " + test.Value());
+	
+	
+	}
+
+}
+
