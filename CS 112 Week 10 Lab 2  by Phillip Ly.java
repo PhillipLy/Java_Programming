@@ -1,4 +1,4 @@
-// CS 112 Week 10 Lab 1
+// CS 112 Week 10 Lab 2
 // by: Phillip Ly
 // This is a class of the program guess a number game
 // with "dice" implemented 
