@@ -10,7 +10,7 @@ public class Week_10_Homework {
 	int diceNumber;
         int number;
 	int bounces;
-    static int numberValue;
+        static int numberValue;
 	int totalValue = 0;
 	int keepTrackOfThrows = 0;
 	int numberOfThrow = 0;
