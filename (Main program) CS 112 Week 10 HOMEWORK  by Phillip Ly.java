@@ -20,6 +20,7 @@ public class Week_10_Homework_Program {
 		int choice = 1;
 		int scorecard;
 		int bounces = (int) (Math.random() * (100) + 1);
+		int playersWinsForCalculation = 0;
 		Week_10_Homework myDice = new Week_10_Homework(bounces); // creates the
 		// dice
 		// object
@@ -61,6 +62,7 @@ public class Week_10_Homework_Program {
 				// display the message of outcome
 				userWins[tries] = 1;
 				compWins[tries] = 0;
+				playersWinsForCalculation++;
 			}
 
 			else {
@@ -80,35 +82,17 @@ public class Week_10_Homework_Program {
 				// relevant codes keeping tracks of player wins and win
 				// percentages
 				if (scorecard == 1) {
-					int wins = 0;
-					int loses = 0;
-
-					for (int i : userWins) {
-						wins += i;
-					}
-
-					for (int i : compWins) {
-						loses += i;
-					}
 
 					myDice.setGameBoardInitial();
-					// keeping tracks of wins and loses
-
-					myDice.keepTrackHistory(wins, loses);
+					
+					// keeping tracks of wins and loses, games history, and results
+					myDice.keepTrackHistory(userWins, compWins, tries, userChoice, compChoice);
 
 					myDice.promptUserGuessAndComputerNumber();
 
-					for (int i = 0; i <= tries; i++) {
-
-						JOptionPane.showMessageDialog(null, "Your guess no"
-								+ " " + String.valueOf(i + 1) + " was: "
-								+ userChoice[i] + " The actual number was: "
-								+ compChoice[i]);
-
-						myDice.playerWinPercentage(wins, tries);
+					myDice.playerWinPercentage(playersWinsForCalculation, tries);
 
 					}
-
 					scorecard = 1;
 
 				}
@@ -116,7 +100,5 @@ public class Week_10_Homework_Program {
 			tries++;
 
 		} // the While loop's bracket
-
-	}
 
 }
