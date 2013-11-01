@@ -7,13 +7,13 @@ import javax.swing.JOptionPane; // imports that makes Java option Panels impleme
 
 public class Week_10_Homework {
 	// declarations
-	int diceNumber;
-	int number;
-	int bounces;
-	static int numberValue;
-	int totalValue = 0;
-	int keepTrackOfThrows = 0;
-	int numberOfThrow = 0;
+	private int diceNumber;
+	private int number;
+	private int bounces;
+	private static int numberValue;
+	private int totalValue = 0;
+	private int keepTrackOfThrows = 0;
+	private int numberOfThrow = 0;
 
 	// Constructor
 	// bounceNumber is the number of bounces from the main program
@@ -81,7 +81,7 @@ public class Week_10_Homework {
 			JOptionPane.showMessageDialog(null, winPercentageOfUser);
 		}
 	}
-
+         // if only one throw was made
 	public static void OneThrow() {
 		numberValue = (int) (1 + Math.random() * 6);
 
@@ -89,7 +89,7 @@ public class Week_10_Homework {
 				+ numberValue);
 
 	}
-
+        // returns the value after dices and bounces are accounted for
 	public int Value() {
 		diceNumber = number;
 		return diceNumber;
@@ -110,12 +110,14 @@ public class Week_10_Homework {
 				.showInputDialog("Guess the number the dice(s) will roll.")));
 	}
 
+	// display the user's guess and the number CPU generated
 	public void promptUserGuessAndComputerNumber() {
 
 		JOptionPane.showMessageDialog(null,
 				"The following are your guesses and the computers number");
 	}
-
+	
+	// display history and results of games played
 	public int promptHistoryAndResults() {
 
 		return (Integer
@@ -124,7 +126,8 @@ public class Week_10_Homework {
 								+ "game result? 1 for yes, 0 for no "
 								+ "(WARNING: this option is only available every even attempts)")));
 	}
-
+	
+	// display number of throws
 	public int promptNumberOfDiceToThrow() {
 
 		return (Integer.parseInt(JOptionPane
