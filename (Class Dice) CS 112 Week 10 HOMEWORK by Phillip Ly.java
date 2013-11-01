@@ -8,9 +8,9 @@ import javax.swing.JOptionPane; // imports that makes Java option Panels impleme
 public class Week_10_Homework {
 	//declarations
 	int diceNumber;
-	int number;
+        int number;
 	int bounces;
-    static int numberValue;
+    	static int numberValue;
 	int totalValue = 0;
 	int keepTrackOfThrows = 0;
 	int numberOfThrow = 0;
