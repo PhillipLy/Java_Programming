@@ -49,7 +49,7 @@ public class TrippleDiceWithHistory extends Dice_Class_Week_11_Labs
 		{
 		String printHistoryOfThrows = String.format("The %d throw's value was %d", i, historyOfThrows[i]);
 		
-		return (JOptionPane.showMessageDialog(null, toPrint));
+		return (JOptionPane.showMessageDialog(null, printHistoryOfThrows));
 		}
 	}
 	
