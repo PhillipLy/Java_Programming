@@ -8,6 +8,17 @@ public class TrippleDice extends Dice_Class_Week_11_Labs
 		super(3);
 	}
 	
+	@Override
+	public String toString()
+	{
+		String toPrint = String.format(
+				"Number of dices: %d ; Number of Bounces %d; "
+				+ "Current Value: %d", diceNumbers, bounces, number);
+			
+		return (JOptionPane.showMessageDialog(null, toPrint));
+
+	}
+	
 }
 
 //CS 112 Week 11 Dice Class 
@@ -219,7 +230,6 @@ public class Dice_Class_Week_11_Labs {
 					"An error has occured! Restarting the game...");
 		}
 		
-		@Override
 		public String toString()
 		{
 			String toPrint = String.format(
