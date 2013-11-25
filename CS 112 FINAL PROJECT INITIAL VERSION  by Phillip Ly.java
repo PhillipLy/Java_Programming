@@ -66,7 +66,7 @@ public class GameBoard {
 	public static final int COLS = 3;
 
 	// package access
-	Section[][] sections; // a board composes of ROWS-by-COLS Cell instances
+	Section[][] sections; // a board composes of ROWS-by-COLS Section instances
 	int currentRow, currentCol; // the current subsection's row and column
 
 	/** Constructor to initialize the game board */
@@ -89,7 +89,7 @@ public class GameBoard {
 		}
 	}
 
-	/** Return true if it is a tie (i.e., no more EMPTY cell) */
+	/** Return true if it is a tie (i.e., no more EMPTY section) */
 	public boolean isTie() {
 		for (int row = 0; row < ROWS; ++row) {
 			for (int col = 0; col < COLS; ++col) {
@@ -102,7 +102,7 @@ public class GameBoard {
 	}
 
 	/**
-	 * Return true if the player with "theSeed" is victorious after placing at
+	 * Return true if the player with "theSection" is victorious after placing at
 	 * (currentRow, currentCol)
 	 */
 	public boolean isVictorious(Subsection theSection) {
@@ -214,7 +214,7 @@ public class TicTacToeGameMain {
 		} while (!validInput); // repeat until input is valid
 	}
 
-	/** Update the currentState after the player with "theSeed" has moved */
+	/** Update the currentState after the player with "theSection" has moved */
 	public void updateGame(Subsection theSection) {
 		if (board.isVictorious(theSection)) { // check for victorious condition
 			currentState = (theSection == Subsection.EX) ? StateOfGame.EX_WON
