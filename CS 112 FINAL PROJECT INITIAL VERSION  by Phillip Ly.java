@@ -23,7 +23,7 @@ public class Section {
 
 	// package access
 	Subsection content; // content of this section of type subsection.
-	// take a value of Seed.EMPTY, Seed.EX, or Seed.CIRCLE
+	// take a value of Subsection.EMPTY, Subsection.EX, or Subsection.CIRCLE
 	int row, column; // row and column of this cell, not used in this program
 
 	/** Constructor to initialize this cell */
