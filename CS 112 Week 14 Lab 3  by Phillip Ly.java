@@ -21,7 +21,7 @@ public class SimpleDiceArray {
         public void add(int value)
         {
                 int position = diceIndex; // store the dice index
-                array[position] = value;
+                array[position] += value;
 
                 System.out.printf(" The value of the dice is %2d ", value);
 
@@ -35,14 +35,14 @@ public class SimpleDiceArray {
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
+
 
 public class MainDiceTest {
 
         public static void main(String[] args) {
 
                 // construct the shared object
-                SimpleDiceArray sharedSimpleDiceArray = new SimpleDiceArray(25);
+                SimpleDiceArray sharedSimpleDiceArray = new SimpleDiceArray();
 
                 System.out.println("Starting Thread Pool");
                 // create executorService to manage threads
