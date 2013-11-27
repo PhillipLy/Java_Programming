@@ -42,7 +42,7 @@ public class MainDiceTest {
         public static void main(String[] args) {
 
                 // construct the shared object
-                SimpleDiceArray sharedSimpleDiceArray = new SimpleDiceArray();
+                SimpleDiceArray sharedSimpleDiceArray = new SimpleDiceArray(25);
 
                 System.out.println("Starting Thread Pool");
                 // create executorService to manage threads
