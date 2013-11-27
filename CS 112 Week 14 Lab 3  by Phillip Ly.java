@@ -21,7 +21,7 @@ public class SimpleDiceArray {
         public void add(int value)
         {
                 int position = diceIndex; // store the dice index
-                array[position] += value;
+                array[position] = value;
 
                 System.out.printf(" The value of the dice is %2d ", value);
 
