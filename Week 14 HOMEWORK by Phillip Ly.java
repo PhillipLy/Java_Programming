@@ -375,7 +375,9 @@ import java.io.IOException;
 import java.net.URL;
 import javax.sound.sampled.*;
 
-......
+
+
+
 
 //Declare the following variables for the sound clips in the TicTacToeGameMain class
 String fileMove = "sounds/move.wav";         // audio filename for move effect
@@ -383,7 +385,8 @@ String fileGameOver = "sounds/gameover.wav"; // audio filename for game-over eff
 Clip soundClipMove;      // Sound clip for move effect
 Clip soundClipGameOver;  // Sound clip for game-over effect
 
-......
+
+
 
 //In the main TicTacToeGameMain's Constructor
 try {
@@ -410,7 +413,8 @@ System.err.println("Audio Format not supported!");
 e.printStackTrace();
 }
 
-......
+
+
 
 //In mouseClicked() event-handler - play sound effect upon mouse-click
 if (currentState == GameState.PLAYING) {
