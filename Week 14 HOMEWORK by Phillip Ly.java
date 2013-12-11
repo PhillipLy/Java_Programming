@@ -316,3 +316,121 @@ public class TicTacToeGameMain extends JPanel {
 }
 
 // Good, Phillip
+
+
+
+
+
+
+
+
+
+// Extra features: optional to add (recomend to run the program without these features first)
+
+// running as an applet
+//if using eclipse, one can use "appletviewer" without an HTML file
+
+
+import javax.swing.*;
+
+/** Applet for .... */
+@SuppressWarnings("serial")
+public class SwingTemplateJApplet extends JApplet {
+ 
+   /** init() to setup the UI components */
+   @Override
+   public void init() {
+      // Run GUI codes in the Event-Dispatching thread for thread safety
+      try {
+         // Use invokeAndWait() to ensure that init() exits after GUI construction
+         SwingUtilities.invokeAndWait(new Runnable() {
+            @Override
+            public void run() {
+               // Set the content-pane of "this" JApplet to an instance of main JPanel
+               setContentPane(new SwingTemplateJPanel());
+            }
+         });
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+   }
+}
+
+
+
+
+
+
+
+
+
+
+// For adding sound effect: one sound is as the player makes the move, the other is when the game is over
+
+// add the following to the TicTacToeGameMain.java
+
+
+//Add the import statements 
+import java.io.IOException;
+import java.net.URL;
+import javax.sound.sampled.*;
+
+......
+
+//Declare the following variables for the sound clips in the TicTacToeGameMain class
+String fileMove = "sounds/move.wav";         // audio filename for move effect
+String fileGameOver = "sounds/gameover.wav"; // audio filename for game-over effect
+Clip soundClipMove;      // Sound clip for move effect
+Clip soundClipGameOver;  // Sound clip for game-over effect
+
+......
+
+//In the main TicTacToeGameMain's Constructor
+try {
+URL url = this.getClass().getClassLoader().getResource(fileGameOver);
+if (url == null) {
+   System.err.println("Couldn't find file: " + fileGameOver);
+} else {
+   AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+   soundClipGameOver = AudioSystem.getClip();
+   soundClipGameOver.open(audioIn);
+}
+    
+url = this.getClass().getClassLoader().getResource(fileMove);
+if (url == null) {
+   System.err.println("Couldn't find file: " + fileMove);
+} else {
+   AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+   soundClipMove = AudioSystem.getClip();
+   soundClipMove.open(audioIn);
+}
+} catch (UnsupportedAudioFileException e) {
+System.err.println("Audio Format not supported!");
+} catch (Exception e) {
+e.printStackTrace();
+}
+
+......
+
+//In mouseClicked() event-handler - play sound effect upon mouse-click
+if (currentState == GameState.PLAYING) {
+if (soundClipMove.isRunning()) soundClipMove.stop();
+soundClipMove.setFramePosition(0); // rewind to the beginning
+soundClipMove.start();             // Start playing
+} else {
+if (soundClipGameOver.isRunning()) soundClipGameOver.stop();
+soundClipGameOver.setFramePosition(0); // rewind to the beginning
+soundClipGameOver.start();             // Start playing
+}
+
+
+
+
+
+
+
+
+
+
+
+
